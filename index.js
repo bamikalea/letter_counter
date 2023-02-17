@@ -5,20 +5,22 @@ document.getElementById("count-btn").addEventListener("click", function(e){
 })
 
 function countLetters(word){
-    const str = word.toLowerCase().split("")
+    const wordArr = word.toLowerCase().split("")
     const uniqueArr = []
 
-    str.forEach(function(item){
+    // create unique arr without duplicates
+    wordArr.forEach(function(item){
         if(!uniqueArr.includes(item)){
             uniqueArr.push(item)
         }
     })
-
+// compare eleents of unique arr with each element of the inputarr
     uniqueArr.forEach(function(item){
-        compare(item, str)
+        compare(item, wordArr)
     })
 }
 
+// function to compare and count letters
 function compare(letter, word){
     let letterCount = 0
     word.forEach(item => {
